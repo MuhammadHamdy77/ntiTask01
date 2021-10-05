@@ -1,0 +1,17 @@
+body{
+    background-color: #151933;
+}
+
+.inp-customer{
+    
+padding: 10px;
+border: navajowhite;
+background-color: transparent;
+border-bottom: 1px solid #b0b0b0;
+margin-left: 45px;
+color: #fff;
+}
+.btn-add{
+
+    margin-left: 15px;
+}

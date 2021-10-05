@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container m-auto py-5 text-center">
+        
+        <!-- <form id="formCustomer"> -->
+            <input class="inp-customer d-none" type="number" name="id" id="idCustomer" placeholder="ID CUSTOMER">
+            <input class="inp-customer" type="text" name="name" id="nameCustomer" placeholder="Name CUSTOMER">
+            <input class="inp-customer" type="text" name="balance" id="balanceCustomer" placeholder="Balance CUSTOMER">
+            <button class="btn-add btn btn-info" id="btnAdd">Add</button>
+        <!-- </form> -->
+    </div>
+
+<div class="d-flex">
+    <div class="container d-none text-center add-balance">
+        <label for="addBalance" class="text-white"> Add Balance</label>
+        <input type="text" name="addBalance" id="addBalanceINP">
+        <button class="btn btn-success" id="addBalanceBtn">add balance</button>
+    </div>
+    <div class="container d-none text-center draw-balance">
+        <label for="drawBalance" class="text-white">WhithDraw</label>
+        <input type="text" name="drawBalance" id="drawBalanceINP">
+        <button class="btn btn-success" id="drawBalanceBtn">whithdraw</button>
+    </div>
+</div>
+    <div class="container mt-5">
+
+        <div class="row" id="displayData">
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
