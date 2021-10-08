@@ -1,0 +1,32 @@
+{{>header}}
+<div class="back-movie">
+<div class="container">
+    <div class="row py-5">
+
+        <div class="col-md-4 d-flex align-items-center">
+            <div>
+                
+            <div class="brdr w-25 mb-4"></div>
+            <h2>Trending Movies To Watch <br> Right Now</h2>
+            <p>Most Watched Movies by dayes</p>
+            <div class="brdr w-75 mt-4"></div>
+            </div>
+        </div>
+        {{#each movies}}
+        <div class="col-md-2">
+
+           <div class="singl-movie my-3 position-relative">
+               <img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="">
+               <h3 class="h6"> {{this.title}}</h3>
+               <div class="vote">
+                   {{this.vote_average}}
+               </div>
+           </div>
+
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+</div>
+{{>footer}}

@@ -1,0 +1,27 @@
+{{>header}}
+
+<div class="container my-5">
+<table class="table table-bordered text-center">
+    <thead class="thead-light">
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>body</th>
+        </tr>
+    </thead>
+    <tbody class="table-striped">
+{{#each data}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.body}}</td>
+
+        </tr>
+{{/each}}
+    </tbody>
+</table>
+
+
+
+</div>
+{{>footer}}
