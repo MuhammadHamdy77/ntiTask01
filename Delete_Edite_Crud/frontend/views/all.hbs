@@ -1,0 +1,39 @@
+{{>header}}
+{{>nav}}
+<table class="table container my-5">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#unless userStatus}}
+    <tr>
+      <td class="text-center" colspan="4">No Yet Data</td>
+    </tr>
+    {{else}}
+{{#each allUsers}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.age}}</td>
+      <td>
+          
+          <div class="d-flex justify-content-center">
+              <a href="/delete/{{this.id}}" class="btn btn-danger">Delete</a>
+              <a href="/edit/{{this.id}}" class="btn btn-primary mx-2">Edit</a>
+              <a href="/single/{{this.id}}" class="btn btn-info">Show User</a>
+          </div>
+      </td>
+    </tr>
+{{/each}}
+{{/unless}}
+  </tbody>
+</table>
+
+
+
+{{>footer}}
