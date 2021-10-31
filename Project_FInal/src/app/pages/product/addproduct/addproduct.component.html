@@ -1,0 +1,39 @@
+     <section class=" my-3">
+        <form [formGroup]="ProductForm"  (ngSubmit)="addProd(ProductForm)">
+        
+            <div class="container w-50 my-5">
+                <div class="row">
+                    <div class="form-group">
+                        <div *ngIf="errProd!=''" class="col-md-12 alert alert-danger">{{errProd}}</div>                    </div>
+                    <div class="form-group">
+                        <input formControlName="name" class="form-control" name="name" placeholder="Name Product">
+                        <div class="alert alert-danger my-3" *ngIf="name?.errors &&( name?.dirty || name?.touched)">
+                            <p *ngIf="name?.errors?.required"> * Name is required </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="price" class="form-control" name="price" placeholder="Price">
+                        <div class="alert alert-danger my-3" *ngIf="price?.errors && (price?.dirty || price?.touched)">
+                            <p *ngIf="price?.errors?.required"> *price  is required </p>
+                            <p *ngIf="price?.errors?.pattern"> * Please Type Number Only </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="category" class="form-control" name="category" placeholder=" Category">
+                        <div class="alert alert-danger my-3" *ngIf="category?.errors &&( category?.dirty || category?.touched)">
+                            <p *ngIf="category?.errors?.required"> *category  is required </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="description" class="form-control" name="description" placeholder=" description">
+                        <div class="alert alert-danger my-3" *ngIf="description?.errors &&( description?.dirty || description?.touched)">
+                            <p *ngIf="description?.errors?.required"> *description  is required </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </section>

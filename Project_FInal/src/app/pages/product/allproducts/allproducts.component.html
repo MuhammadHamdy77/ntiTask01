@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor='let prod of allProdcut'>
+            <div class="border m-2 border-warning text-center p-2">
+
+                <p class="badge badge-danger">{{prod.name}}</p>
+                <br>
+                <p class="badge badge-warning">{{prod.category}}</p>
+                <br>
+                <p class="badge badge-success">{{prod.description}}</p>
+                <br>
+                <p class="badge badge-info">{{prod.price}}</p>
+                <br>
+                <a class="btn btn-outline-success"> Add To Cart</a>
+            </div>
+        </div>
+    </div>
+</div>

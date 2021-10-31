@@ -1,0 +1,15 @@
+<div class="container">
+<div class="row">
+
+        <div class="col-md-4" *ngFor="let order of quantityOrder">
+            <div class="p-3">
+                
+            <p class="text-muted">Quantity Order: <span class="badge badge-info">{{order.quantity}}</span></p>
+            <p class="text-muted">User Id: <span class="badge badge-primary">{{userId}}</span></p>
+            <p class="text-muted">Prod Id: <span class="badge badge-warning">{{prodId}}</span></p>
+            <a class="btn btn-outline-success mx-2">Update Order</a>
+            <a class="btn btn-outline-danger mx-2">Delete Order</a>
+            </div>
+        </div>
+</div>
+</div>

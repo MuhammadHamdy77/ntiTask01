@@ -1,0 +1,77 @@
+<form #registerUser="ngForm" (ngSubmit)="register(registerUser)">
+    <div class="container w-50 my-5">
+        <div class="row">
+            <div class="form-group">
+                <input 
+                class="form-control" 
+                name="name" #name="ngModel"
+                placeholder="your name" 
+                [(ngModel)]="userData.name"
+                required minlength="3" maxlength="20">
+                <span class="alert alert-danger d-block my-1" *ngIf="name.invalid && (registerUser.submitted || name.dirty || name.touched)">
+                    <li *ngIf="name.errors?.required">  * Name Is Required</li>
+                    <li *ngIf="name.errors?.minlength"> * Must Be More than 3 charc</li>
+                    <li *ngIf="name.errors?.maxlength"> * Must Be less than 20 charc</li>
+                </span>
+            </div>
+            <div class="form-group">
+                <input 
+                class="form-control" 
+                name="email" #email="ngModel" [(ngModel)]="userData.email"
+                placeholder="your email"
+                required email>
+                <span class="alert alert-danger d-block my-1" *ngIf="email.invalid && (registerUser.submitted || email.dirty || email.touched)">
+                    <li *ngIf="email.errors?.required">  * Email Is Required</li>
+                    <li *ngIf="email.errors?.email"> * Invalid Email Format</li>
+                </span>
+                <span class="alert alert-danger my-3" *ngIf="emailError!=''">{{emailError}}</span>
+            </div>
+            <div class="form-group">
+                <input 
+                class="form-control" type="password"
+                name="password" #pass="ngModel" [(ngModel)]="userData.password" 
+                placeholder="your password"
+                required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+                <span class="alert alert-danger d-block my-1" *ngIf="pass.invalid && (registerUser.submitted || pass.dirty || pass.touched)">
+                    <li *ngIf="pass.errors?.required">  * pass Is Required</li>
+                    <li *ngIf="pass.errors?.pattern"> * Invalid pass</li>
+                </span>
+            </div>
+            <div class="form-group">
+                <input 
+                class="form-control" 
+                name="phone" #phone="ngModel" [(ngModel)]="userData.phone"
+                placeholder="your phone"
+                required minlength="11" maxlength="11" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$">
+                <span class="alert alert-danger d-block my-1" *ngIf="phone.invalid && (registerUser.submitted || phone.dirty || phone.touched)">
+                    <li *ngIf="phone.errors?.required">  * phone Is Required</li>
+                    <li *ngIf="phone.errors?.pattern"> * Invalid phone</li>
+                </span>
+            </div>
+            <div class="form-group">
+                <input 
+                class="form-control" 
+                name="age" #age="ngModel" [(ngModel)]="userData.age"
+                placeholder="your age"
+                required type="number" min="0">
+                <span class="alert alert-danger d-block my-1" *ngIf="age.invalid && (registerUser.submitted || age.dirty || age.touched)">
+                    <li *ngIf="age.errors?.required">  * age Is Required</li>
+                    <li *ngIf="age.errors?.min"> * invalid age must be above 0</li>
+                </span>
+            </div>
+            <div class="form-group">
+                <select class="form-select form-select-lg mb-3" name="gender" #gender="ngModel" [(ngModel)]="userData.gender" required>
+                    <option  disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <span class="alert alert-danger d-block my-1" *ngIf="gender.invalid && (registerUser.submitted || gender.dirty || gender.touched)">
+                    <li *ngIf="gender.errors?.required">  * gender Is Required</li>
+                </span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger">Register</button>
+            </div>
+        </div>
+    </div>
+</form>

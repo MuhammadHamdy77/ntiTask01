@@ -1,0 +1,16 @@
+<section>
+    <carousel>
+        <slide *ngFor="let img of image">
+          <img  src="{{img}}" alt="first slide" style="display: block; width: 100%;">
+        </slide>
+      </carousel>
+</section>
+
+<!-- end slider -->
+<section class="container my-5">
+  <div class="row">
+      <div class="col-12 col-md-3 " *ngFor="let r of allRoles">
+        <app-doctorcard [dData]=r></app-doctorcard>
+      </div>
+  </div>
+</section>
